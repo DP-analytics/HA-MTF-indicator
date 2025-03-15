@@ -1,0 +1,111 @@
+//@version=6
+indicator("Heiken Ashi MTF Extended DP", overlay=true)
+
+// Poprawna metoda uzyskiwania danych Heiken Ashi w Pine Script 6
+ha_t = ticker.heikinashi(syminfo.tickerid)
+
+res = input.timeframe("5", title="TM 1")
+ha_open = request.security(ha_t, res, open, barmerge.gaps_off)
+ha_close = request.security(ha_t, res, close, barmerge.gaps_off)
+ha_dif = ha_open-ha_close
+ha_diff = ha_dif > 0 ? 1 : (ha_dif<0 ? 2 : 3)
+
+res2 = input.timeframe("15", title="TM 2")
+ha_open2 = request.security(ha_t, res2, open, barmerge.gaps_off)
+ha_close2 = request.security(ha_t, res2, close, barmerge.gaps_off)
+ha_dif2 = ha_open2-ha_close2
+ha_diff2 = ha_dif2 > 0 ? 1 : (ha_dif2<0 ? 2 : 3)
+
+res3 = input.timeframe("30", title="TM 3")
+ha_open3 = request.security(ha_t, res3, open, barmerge.gaps_off)
+ha_close3 = request.security(ha_t, res3, close, barmerge.gaps_off)
+ha_dif3 = ha_open3-ha_close3
+ha_diff3 = ha_dif3 > 0 ? 1 : (ha_dif3<0 ? 2 : 3)
+
+res4 = input.timeframe("60", title="TM 4")
+ha_open4 = request.security(ha_t, res4, open, barmerge.gaps_off)
+ha_close4 = request.security(ha_t, res4, close, barmerge.gaps_off)
+ha_dif4 = ha_open4-ha_close4
+ha_diff4 = ha_dif4 > 0 ? 1 : (ha_dif4<0 ? 2 : 3)
+
+res5 = input.timeframe("120", title="TM 5")
+ha_open5 = request.security(ha_t, res5, open, barmerge.gaps_off)
+ha_close5 = request.security(ha_t, res5, close, barmerge.gaps_off)
+ha_dif5 = ha_open5-ha_close5
+ha_diff5 = ha_dif5 > 0 ? 1 : (ha_dif5<0 ? 2 : 3)
+
+res6 = input.timeframe("480", title="TM 6")
+ha_open6 = request.security(ha_t, res6, open, barmerge.gaps_off)
+ha_close6 = request.security(ha_t, res6, close, barmerge.gaps_off)
+ha_dif6 = ha_open6-ha_close6
+ha_diff6 = ha_dif6 > 0 ? 1 : (ha_dif6<0 ? 2 : 3)
+
+res7 = input.timeframe("720", title="TM 7")
+ha_open7 = request.security(ha_t, res7, open, barmerge.gaps_off)
+ha_close7 = request.security(ha_t, res7, close, barmerge.gaps_off)
+ha_dif7 = ha_open7-ha_close7
+ha_diff7 = ha_dif7 > 0 ? 1 : (ha_dif7<0 ? 2 : 3)
+
+// Dodane 3 nowe interwały
+res8 = input.timeframe("D", title="TM 8")
+ha_open8 = request.security(ha_t, res8, open, barmerge.gaps_off)
+ha_close8 = request.security(ha_t, res8, close, barmerge.gaps_off)
+ha_dif8 = ha_open8-ha_close8
+ha_diff8 = ha_dif8 > 0 ? 1 : (ha_dif8<0 ? 2 : 3)
+
+res9 = input.timeframe("W", title="TM 9")
+ha_open9 = request.security(ha_t, res9, open, barmerge.gaps_off)
+ha_close9 = request.security(ha_t, res9, close, barmerge.gaps_off)
+ha_dif9 = ha_open9-ha_close9
+ha_diff9 = ha_dif9 > 0 ? 1 : (ha_dif9<0 ? 2 : 3)
+
+res10 = input.timeframe("M", title="TM 10")
+ha_open10 = request.security(ha_t, res10, open, barmerge.gaps_off)
+ha_close10 = request.security(ha_t, res10, close, barmerge.gaps_off)
+ha_dif10 = ha_open10-ha_close10
+ha_diff10 = ha_dif10 > 0 ? 1 : (ha_dif10<0 ? 2 : 3)
+
+// Dodanie kolorowania tła na podstawie miesięcznych świeczek Heikin Ashi
+bgcolor(ha_diff10==1 ? color.new(color.red, 90) : (ha_diff10==2 ? color.new(color.green, 90) : na), force_overlay=true)
+
+plot(15, title="TF1", color=ha_diff==1 ? color.red : (ha_diff==2 ? color.green : color.white), style=plot.style_circles, linewidth=5, join=true)
+plot(14, title="TF2", color=ha_diff2==1 ? color.red : (ha_diff2==2 ? color.green : color.white), style=plot.style_circles, linewidth=5, join=true)
+plot(13, title="TF3", color=ha_diff3==1 ? color.red : (ha_diff3==2 ? color.green : color.white), style=plot.style_circles, linewidth=5, join=true)
+plot(12, title="TF4", color=ha_diff4==1 ? color.red : (ha_diff4==2 ? color.green : color.white), style=plot.style_circles, linewidth=5, join=true)
+plot(11, title="TF5", color=ha_diff5==1 ? color.red : (ha_diff5==2 ? color.green : color.white), style=plot.style_circles, linewidth=5, join=true)
+plot(10, title="TF6", color=ha_diff6==1 ? color.red : (ha_diff6==2 ? color.green : color.white), style=plot.style_circles, linewidth=5, join=true)
+plot(9, title="TF7", color=ha_diff7==1 ? color.red : (ha_diff7==2 ? color.green : color.white), style=plot.style_circles, linewidth=5, join=true)
+// Wykresy dla 3 nowych interwałów
+plot(8, title="TF8", color=ha_diff8==1 ? color.red : (ha_diff8==2 ? color.green : color.white), style=plot.style_circles, linewidth=5, join=true)
+plot(7, title="TF9", color=ha_diff9==1 ? color.red : (ha_diff9==2 ? color.green : color.white), style=plot.style_circles, linewidth=5, join=true)
+plot(6, title="TF10", color=ha_diff10==1 ? color.red : (ha_diff10==2 ? color.green : color.white), style=plot.style_circles, linewidth=5, join=true)
+
+// Wykrywanie zmiany koloru świecy HA na interwale tygodniowym
+prev_ha_diff9 = ha_diff9[1]
+color_change_weekly = ta.change(ha_diff9) != 0 and ha_diff9 != 3 and prev_ha_diff9 != 3
+
+// Wykrywanie początku nowej świecy tygodniowej
+is_new_week = timeframe.change("W")
+
+// Rysowanie strzałek na głównym wykresie
+// Strzałka w górę gdy świeca zmienia kolor na zielony
+plotshape(color_change_weekly and ha_diff9 == 2, title="HA Weekly Bullish", 
+          style=shape.triangleup, location=location.belowbar, 
+          color=color.green, size=size.small, force_overlay=true)
+
+// Strzałka w dół gdy świeca zmienia kolor na czerwony
+plotshape(color_change_weekly and ha_diff9 == 1, title="HA Weekly Bearish", 
+          style=shape.triangledown, location=location.abovebar, 
+          color=color.red, size=size.small, force_overlay=true)
+
+// Dodatkowe sygnały na początku nowej świecy tygodniowej HA
+plotshape(is_new_week and ha_diff9 == 2, title="New HA Weekly Bullish", 
+          style=shape.diamond, location=location.belowbar, 
+          color=color.lime, size=size.tiny, force_overlay=true)
+          
+plotshape(is_new_week and ha_diff9 == 1, title="New HA Weekly Bearish", 
+          style=shape.diamond, location=location.abovebar, 
+          color=color.maroon, size=size.tiny, force_overlay=true)
+
+// Dodanie kolorowania świec zgodnie z tygodniowymi świecami Heikin Ashi
+barcolor(ha_diff9 == 1 ? color.red : (ha_diff9 == 2 ? color.green : na))
