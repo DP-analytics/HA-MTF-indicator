@@ -12,7 +12,7 @@ Wyświetla linie kolorowych punktów reprezentujących trend na każdym interwal
 -Koloruje świece wykresu zgodnie z tygodniowym trendem Heiken Ashi
 -Rysuje strzałki przy zmianie kierunku trendu na interwale tygodniowym
 -Oznacza początek nowych świec tygodniowych
-![obraz](https://github.com/user-attachments/assets/933659a5-9017-477f-a2e6-886fd7df9ff2)
+
 
 Możliwości zastosowania
 
