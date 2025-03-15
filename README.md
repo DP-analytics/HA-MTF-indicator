@@ -19,6 +19,7 @@ Możliwości zastosowania
 Wskaźnik może być używany do:
 
 -Sprawdzania zgodności trendów na różnych interwałach czasowych
--Identyfikacji potencjalnych zmian trendu na interwale tygodniowym
+-Identyfikacji potencjalnych zmian trendu na interwale tygodniowym 
 -Filtrowania szumu rynkowego dzięki zastosowaniu techniki Heiken Ashi
 -Uzupełnienia innych strategii handlowych o kontekst wielu interwałów
+ 
