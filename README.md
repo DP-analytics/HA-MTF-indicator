@@ -6,7 +6,7 @@ Wskaźnik przetwarza dane Heiken Ashi z dziesięciu różnych interwałów czaso
 
 Dodatkowo:
 
-Wyświetla linie kolorowych punktów reprezentujących trend na każdym interwale (czerwone = spadki, zielone = wzrosty, białe = neutralny)
+Wyświetla linie kolorowych punktów reprezentujących trend na każdym interwale (czerwone = spadki, zielone = wzrosty, białe = brak danych[limit])
 -Koloruje tło wykresu na podstawie miesięcznych świec Heiken Ashi
 -Koloruje świece wykresu zgodnie z tygodniowym trendem Heiken Ashi
 -Rysuje strzałki przy zmianie kierunku trendu na interwale tygodniowym
