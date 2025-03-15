@@ -1,7 +1,6 @@
 ![obraz](https://github.com/user-attachments/assets/88b45461-db05-4894-9d0d-177fcdabf740)Heiken Ashi MTF Extended 
 
 Ten wskaźnik dla TradingView wyświetla trendy Heiken Ashi na wielu interwałach czasowych jednocześnie. Został napisany w Pine Script v6.
-Co robi ten wskaźnik
 
 Wskaźnik przetwarza dane Heiken Ashi z dziesięciu różnych interwałów czasowych (od 5 minut do miesiąca) i wyświetla ich kierunek na jednym wykresie w formie kolorowych punktów. 
 
